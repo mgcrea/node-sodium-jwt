@@ -29,7 +29,8 @@ const main = async () => {
       };
       const payload = JSON.parse(args[0]) as Payload;
       const jwt = signSync(header, payload, args[1]);
-      console.warn('JWT signed');
+      console.warn('JWT successfully signed!');
+      console.warn({header, payload});
       console.log(jwt);
       break;
     }
@@ -38,8 +39,8 @@ const main = async () => {
       const stdin = await readStdin();
       const result = verifySync(stdin.toString(), [args[0]]);
       if (result) {
-        console.warn('JWT verified');
-        console.log({result});
+        console.warn('JWT successfully verified!');
+        console.log(result);
         process.exit(0);
       } else {
         console.log('JWT failed verification');
