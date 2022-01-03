@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Verify should properly support a stringified secretKey 1`] = `
+Object {
+  "header": Object {
+    "alg": "HS512T",
+    "typ": "JWT",
+  },
+  "payload": Object {
+    "iat": 1641227868612,
+    "sub": 7,
+  },
+  "rotated": false,
+}
+`;
+
+exports[`Verify should properly support a stringified secretKey in an array 1`] = `
+Object {
+  "header": Object {
+    "alg": "HS512T",
+    "typ": "JWT",
+  },
+  "payload": Object {
+    "iat": 1641227868612,
+    "sub": 7,
+  },
+  "rotated": false,
+}
+`;
+
+exports[`Verify should properly verify a hashed password 1`] = `
+Object {
+  "header": Object {
+    "alg": "HS512T",
+    "typ": "JWT",
+  },
+  "payload": Object {
+    "iat": 1641227868612,
+    "sub": 7,
+  },
+  "rotated": false,
+}
+`;
