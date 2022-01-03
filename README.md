@@ -36,6 +36,39 @@ npm install @mgcrea/node-sodium-jwt --save
 
 ## Quickstart
 
+### Sign a jwt
+
+```ts
+import {signSync} from '@mgcrea/node-sodium-jwt';
+
+const payload: Payload = {
+  sub: 7,
+  iat: new Date('2022-01-03T16:37:48.612Z').getTime(),
+};
+// Must be 32 bytes long
+const secretKey = '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=';
+const jwt = signSync(payload, secretKey);
+```
+
+### Verify a jwt
+
+```ts
+import {verifySync} from '@mgcrea/node-sodium-jwt';
+
+const jwt =
+  'eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg';
+const secretKey = '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=';
+const {header, payload, rotated} = verifySync(payload, secretKey);
+```
+
+### Generate a new secretKey
+
+Generate a new `secretKey` from the bundled cli:
+
+```sh
+node_modules/.bin/node-sodium-jwt random-bytes
+```
+
 ### Sign a jwt via CLI
 
 Copy a freshly generated `secretKey` from the bundled cli:
