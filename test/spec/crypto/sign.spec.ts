@@ -1,10 +1,6 @@
 import {signSync} from 'src/crypto';
-import {Header, Payload} from 'src/types';
+import {Payload} from 'src/types';
 
-const header: Header = {
-  alg: 'HS512T',
-  typ: 'JWT',
-};
 const payload: Payload = {
   sub: 7,
   iat: new Date('2022-01-03T16:37:48.612Z').getTime(),
@@ -13,14 +9,14 @@ const secretKey = '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=';
 
 describe('Sign', () => {
   it('should properly sign a JWT', async () => {
-    const jwt = signSync(header, payload, Buffer.from(secretKey, 'base64'));
+    const jwt = signSync(payload, Buffer.from(secretKey, 'base64'));
     expect(jwt).toBeDefined();
     expect(typeof jwt).toEqual('string');
     expect(jwt.split('.').length).toEqual(3);
     expect(jwt).toMatchSnapshot();
   });
   it('should properly support a stringified secretKey', async () => {
-    const jwt = signSync(header, payload, secretKey);
+    const jwt = signSync(payload, secretKey);
     expect(jwt).toBeDefined();
     expect(typeof jwt).toEqual('string');
     expect(jwt.split('.').length).toEqual(3);

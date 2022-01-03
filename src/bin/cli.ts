@@ -23,14 +23,11 @@ const main = async () => {
   switch (action) {
     // @NOTE npx ts-node src/bin/cli.ts sign '{"sub": "1"}' '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o='
     case 'sign': {
-      const header: Header = {
-        alg: 'HS512T',
-        typ: 'JWT',
-      };
       const payload = JSON.parse(args[0]) as Payload;
-      const jwt = signSync(header, payload, args[1]);
+      const jwt = signSync(payload, args[1]);
       console.warn('JWT successfully signed!');
-      console.warn({header, payload});
+      const [header, , signature] = jwt.split('.');
+      console.warn({header: Buffer.from(header, 'base64url').toString('utf8'), payload, signature});
       console.log(jwt);
       break;
     }

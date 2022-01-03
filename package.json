@@ -41,5 +41,10 @@
   },
   "engines": {
     "node": ">=14"
-  }
+  },
+  "keywords": [
+    "secure",
+    "jwt",
+    "sodium"
+  ]
 }
