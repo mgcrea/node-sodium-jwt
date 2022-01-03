@@ -1,6 +1,6 @@
 {
   "name": "@mgcrea/node-sodium-jwt",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Fast sodium-based crypto for signing and verifying json web tokens",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
