@@ -1,12 +1,12 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Verify should properly support a stringified secretKey 1`] = `
-Object {
-  "header": Object {
+exports[`Verify > should properly support a stringified secretKey 1`] = `
+{
+  "header": {
     "alg": "HS512T",
     "typ": "JWT",
   },
-  "payload": Object {
+  "payload": {
     "iat": 1641227868612,
     "sub": 7,
   },
@@ -14,13 +14,13 @@ Object {
 }
 `;
 
-exports[`Verify should properly support a stringified secretKey in an array 1`] = `
-Object {
-  "header": Object {
+exports[`Verify > should properly support a stringified secretKey in an array 1`] = `
+{
+  "header": {
     "alg": "HS512T",
     "typ": "JWT",
   },
-  "payload": Object {
+  "payload": {
     "iat": 1641227868612,
     "sub": 7,
   },
@@ -28,13 +28,13 @@ Object {
 }
 `;
 
-exports[`Verify should properly verify a hashed password 1`] = `
-Object {
-  "header": Object {
+exports[`Verify > should properly verify a hashed password 1`] = `
+{
+  "header": {
     "alg": "HS512T",
     "typ": "JWT",
   },
-  "payload": Object {
+  "payload": {
     "iat": 1641227868612,
     "sub": 7,
   },

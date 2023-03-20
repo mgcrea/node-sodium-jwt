@@ -1,5 +1,5 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Sign should properly sign a JWT 1`] = `"eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg"`;
+exports[`Sign > should properly sign a JWT 1`] = `"eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg"`;
 
-exports[`Sign should properly support a stringified secretKey 1`] = `"eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg"`;
+exports[`Sign > should properly support a stringified secretKey 1`] = `"eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg"`;

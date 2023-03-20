@@ -1,25 +1,26 @@
-import {signSync} from 'src/crypto';
-import {Payload} from 'src/types';
+import { signSync } from "src/crypto";
+import type { Payload } from "src/types";
+import { describe, expect, it } from "vitest";
 
 const payload: Payload = {
   sub: 7,
-  iat: new Date('2022-01-03T16:37:48.612Z').getTime(),
+  iat: new Date("2022-01-03T16:37:48.612Z").getTime(),
 };
-const secretKey = '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=';
+const secretKey = "0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=";
 
-describe('Sign', () => {
-  it('should properly sign a JWT', async () => {
-    const jwt = signSync(payload, Buffer.from(secretKey, 'base64'));
+describe("Sign", () => {
+  it("should properly sign a JWT", async () => {
+    const jwt = signSync(payload, Buffer.from(secretKey, "base64"));
     expect(jwt).toBeDefined();
-    expect(typeof jwt).toEqual('string');
-    expect(jwt.split('.').length).toEqual(3);
+    expect(typeof jwt).toEqual("string");
+    expect(jwt.split(".").length).toEqual(3);
     expect(jwt).toMatchSnapshot();
   });
-  it('should properly support a stringified secretKey', async () => {
+  it("should properly support a stringified secretKey", async () => {
     const jwt = signSync(payload, secretKey);
     expect(jwt).toBeDefined();
-    expect(typeof jwt).toEqual('string');
-    expect(jwt.split('.').length).toEqual(3);
+    expect(typeof jwt).toEqual("string");
+    expect(jwt.split(".").length).toEqual(3);
     expect(jwt).toMatchSnapshot();
   });
 });

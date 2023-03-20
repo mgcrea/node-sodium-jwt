@@ -1,6 +1,6 @@
 export type Header = {
-  alg: 'HS512T';
-  typ: 'JWT';
+  alg: "HS512T";
+  typ: "JWT";
 };
 export type Payload = {
   sub: string | number;
