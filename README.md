@@ -1,24 +1,28 @@
-<!-- markdownlint-disable no-inline-html -->
+# Node SodiumJWT
 
-# node-sodium-jwt
-
+<!-- markdownlint-disable MD033 -->
 <p align="center">
   <a href="https://www.npmjs.com/package/@mgcrea/node-sodium-jwt">
     <img src="https://img.shields.io/npm/v/@mgcrea/node-sodium-jwt.svg?style=for-the-badge" alt="npm version" />
   </a>
-  <!-- <a href="https://www.npmjs.com/package/@mgcrea/node-sodium-jwt">
+  <a href="https://www.npmjs.com/package/@mgcrea/node-sodium-jwt">
     <img src="https://img.shields.io/npm/dt/@mgcrea/node-sodium-jwt.svg?style=for-the-badge" alt="npm total downloads" />
-  </a> -->
+  </a>
   <a href="https://www.npmjs.com/package/@mgcrea/node-sodium-jwt">
     <img src="https://img.shields.io/npm/dm/@mgcrea/node-sodium-jwt.svg?style=for-the-badge" alt="npm monthly downloads" />
   </a>
   <a href="https://www.npmjs.com/package/@mgcrea/node-sodium-jwt">
     <img src="https://img.shields.io/npm/l/@mgcrea/node-sodium-jwt.svg?style=for-the-badge" alt="npm license" />
   </a>
+  <br />
   <a href="https://github.com/mgcrea/node-sodium-jwt/actions/workflows/main.yml">
-    <img src="https://img.shields.io/github/workflow/status/mgcrea/node-sodium-jwt/main?style=for-the-badge" alt="github main workflow" />
+    <img src="https://img.shields.io/github/actions/workflow/status/mgcrea/node-sodium-jwt/main.yml?style=for-the-badge&branch=master" alt="build status" />
+  </a>
+  <a href="https://depfu.com/github/mgcrea/node-sodium-jwt">
+    <img src="https://img.shields.io/depfu/dependencies/github/mgcrea/node-sodium-jwt?style=for-the-badge" alt="dependencies status" />
   </a>
 </p>
+<!-- markdownlint-enable MD037 -->
 
 ## Features
 
@@ -39,26 +43,26 @@ npm install @mgcrea/node-sodium-jwt --save
 ### Sign a jwt
 
 ```ts
-import {signSync} from '@mgcrea/node-sodium-jwt';
+import { signSync } from "@mgcrea/node-sodium-jwt";
 
 const payload: Payload = {
   sub: 7,
-  iat: new Date('2022-01-03T16:37:48.612Z').getTime(),
+  iat: new Date("2022-01-03T16:37:48.612Z").getTime(),
 };
 // Must be 32 bytes long
-const secretKey = '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=';
+const secretKey = "0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=";
 const jwt = signSync(payload, secretKey);
 ```
 
 ### Verify a jwt
 
 ```ts
-import {verifySync} from '@mgcrea/node-sodium-jwt';
+import { verifySync } from "@mgcrea/node-sodium-jwt";
 
 const jwt =
-  'eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg';
-const secretKey = '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=';
-const {header, payload, rotated} = verifySync(payload, secretKey);
+  "eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOjcsImlhdCI6MTY0MTIyNzg2ODYxMn0.a3_bFmeD5vugh3p998QXTdPbAuAJFQzCm-2MfmRVEAg";
+const secretKey = "0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o=";
+const { header, payload, rotated } = verifySync(payload, secretKey);
 ```
 
 ### Generate a new secretKey
