@@ -17,7 +17,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "node-sodium-jwt": "./lib/bin/cli.cjs"
+    "node-sodium-jwt": "./dist/bin/cli.cjs"
   },
   "engines": {
     "node": ">=12"
