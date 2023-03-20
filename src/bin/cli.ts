@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#!/usr/bin/env ts-node
 import assert from "node:assert";
 import sodium from "sodium-native";
 import { signSync, verifySync } from "../crypto";
