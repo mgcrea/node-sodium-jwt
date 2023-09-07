@@ -12,15 +12,15 @@ describe("Sign", () => {
   it("should properly sign a JWT", async () => {
     const jwt = signSync(payload, Buffer.from(secretKey, "base64"));
     expect(jwt).toBeDefined();
-    expect(typeof jwt).toEqual("string");
-    expect(jwt.split(".").length).toEqual(3);
+    expect(typeof jwt).toBe("string");
+    expect(jwt.split(".").length).toBe(3);
     expect(jwt).toMatchSnapshot();
   });
   it("should properly support a stringified secretKey", async () => {
     const jwt = signSync(payload, secretKey);
     expect(jwt).toBeDefined();
-    expect(typeof jwt).toEqual("string");
-    expect(jwt.split(".").length).toEqual(3);
+    expect(typeof jwt).toBe("string");
+    expect(jwt.split(".").length).toBe(3);
     expect(jwt).toMatchSnapshot();
   });
 });

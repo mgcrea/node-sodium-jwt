@@ -5,7 +5,7 @@ import { asBuffer, base64UrlEncode } from "../utils";
 export const signSync = (
   payload: Payload,
   secretKey: Buffer | string,
-  extraHeader: Partial<Header> = {}
+  extraHeader: Partial<Header> = {},
 ): string => {
   const header: Header = {
     alg: "HS512T",

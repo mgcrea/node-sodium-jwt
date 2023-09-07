@@ -4,7 +4,7 @@ import { asArray, asBuffer, createError } from "../utils";
 
 export const verifySync = (
   message: string,
-  secretKeys: (string | Buffer) | (string | Buffer)[]
+  secretKeys: (string | Buffer) | (string | Buffer)[],
 ): { header: Header; payload: Payload; rotated: boolean } => {
   const splits = message.split(".");
   if (splits.length !== 3) {
