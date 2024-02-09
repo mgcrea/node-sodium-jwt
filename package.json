@@ -42,24 +42,24 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "sodium-native": "^4.0.4"
+    "sodium-native": "^4.0.7"
   },
   "devDependencies": {
-    "@mgcrea/eslint-config-node": "^0.8.1",
-    "@tsconfig/node-lts": "^18.12.5",
-    "@tsconfig/strictest": "^2.0.1",
-    "@types/debug": "^4.1.8",
-    "@types/node": "^18.17.14",
-    "@types/sodium-native": "^2.3.5",
+    "@mgcrea/eslint-config-node": "^0.9.5",
+    "@tsconfig/node-lts": "^20.1.1",
+    "@tsconfig/strictest": "^2.0.3",
+    "@types/debug": "^4.1.12",
+    "@types/node": "^20.11.17",
+    "@types/sodium-native": "^2.3.9",
     "benchmark": "^2.1.4",
-    "eslint": "^8.48.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-organize-imports": "^3.2.3",
-    "prisma": "^5.2.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "prisma": "^5.9.1",
     "shebang-trim": "^1.2.0",
-    "tsup": "^7.2.0",
-    "tsx": "^3.12.8",
-    "typescript": "^5.2.2",
-    "vitest": "^0.34.3"
+    "tsup": "^8.0.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2"
   }
 }
