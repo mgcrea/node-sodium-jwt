@@ -65,7 +65,7 @@ const main = async () => {
     }
     default:
       console.log("Sorry, that is not something I know how to do.");
-      console.log(`Available actions: ${["sign", "verify"].join(", ")}.`);
+      console.log(`Available actions: ${["sign", "verify", "generate-keypair", "random-bytes"].join(", ")}.`);
   }
 };
 
