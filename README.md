@@ -70,7 +70,7 @@ const { header, payload, rotated } = verifySync(payload, secretKey);
 Generate a new `secretKey` from the bundled cli:
 
 ```sh
-node_modules/.bin/node-sodium-jwt random-bytes
+npx @mgcrea/node-sodium-jwt random-bytes
 ```
 
 ### Sign a jwt via CLI
@@ -78,13 +78,13 @@ node_modules/.bin/node-sodium-jwt random-bytes
 Copy a freshly generated `secretKey` from the bundled cli:
 
 ```sh
-node_modules/.bin/node-sodium-jwt sign '{"sub": "1"}' '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o='
+npx @mgcrea/node-sodium-jwt sign '{"sub": "1"}' '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o='
 ```
 
 ### Verify a jwt via CLI
 
 ```sh
-echo -n 'eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIxIn0.QdubXBylKLNswV8-b44StbaNQr3SYhqwRBTMn6A6-JM' | node_modules/.bin/node-sodium-jwt verify '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o='
+echo -n 'eyJhbGciOiJIUzUxMlQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiIxIn0.QdubXBylKLNswV8-b44StbaNQr3SYhqwRBTMn6A6-JM' | npx @mgcrea/node-sodium-jwt verify '0DfgJOaVrb2quroZavPLp7KJm+hTCBN6hZKnsKQSM+o='
 ```
 
 ## Authors
