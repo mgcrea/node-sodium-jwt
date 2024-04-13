@@ -11,7 +11,7 @@ export type JWTRegisteredClaims = {
 // https://openid.net/specs/openid-connect-core-1_0.html
 export type JWTPublicClaims = {
   auth_time?: number;
-  nonce?: string;
+  nonce?: string | number;
   acr?: string;
   amr?: string[];
   azp?: string;
