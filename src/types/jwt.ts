@@ -18,4 +18,6 @@ export type JWTPublicClaims = {
 };
 
 // Custom claims specific to your application
-export interface JWTCustomClaims {}
+export interface JWTCustomClaims {
+  scope: string | string[];
+}
