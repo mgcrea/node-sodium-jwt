@@ -1,9 +1,11 @@
+import type { RegisteredClaims, PublicClaims, CustomClaims } from "./jwt";
+
 export type Header = {
   alg: "HS512T";
   typ: "JWT";
 };
-export type Payload = {
-  sub: string | number;
-  iat?: number;
-  [s: string]: string | number | null | undefined;
-};
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
+
+export type Payload = Simplify<RegisteredClaims & PublicClaims & CustomClaims>;
