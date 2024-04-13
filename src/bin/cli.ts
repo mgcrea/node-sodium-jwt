@@ -2,7 +2,7 @@
 import assert from "node:assert";
 import sodium from "sodium-native";
 import { signSync, verifySync } from "../crypto";
-import type { Payload } from "../types";
+import type { JWTPayload } from "../types";
 
 const [action = "help", ...args] = process.argv.slice(2);
 
@@ -27,7 +27,7 @@ const main = async () => {
     case "sign": {
       assert(args[0], "Missing payload argument");
       assert(args[1], "Missing token argument");
-      const payload = JSON.parse(args[0]) as Payload;
+      const payload = JSON.parse(args[0]) as JWTPayload;
       const jwt = signSync(payload, args[1]);
       console.warn("JWT successfully signed!");
       const [header, , signature] = jwt.split(".") as [string, string, string];

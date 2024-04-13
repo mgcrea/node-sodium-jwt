@@ -1,6 +1,6 @@
-import type { RegisteredClaims, PublicClaims, CustomClaims } from "./jwt";
+import type { JWTCustomClaims, JWTPublicClaims, JWTRegisteredClaims } from "./jwt";
 
-export type Header = {
+export type JWTHeader = {
   alg: "HS512T";
   typ: "JWT";
 };
@@ -8,4 +8,4 @@ export type Header = {
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] } & {};
 
-export type Payload = Simplify<RegisteredClaims & PublicClaims & CustomClaims>;
+export type JWTPayload = Simplify<JWTRegisteredClaims & JWTPublicClaims & JWTCustomClaims>;

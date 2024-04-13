@@ -1,13 +1,13 @@
 import sodium from "sodium-native";
-import type { Header, Payload } from "../types";
+import type { JWTHeader, JWTPayload } from "../types";
 import { asBuffer, base64UrlEncode } from "../utils";
 
 export const signSync = (
-  payload: Payload,
+  payload: JWTPayload,
   secretKey: Buffer | string,
-  extraHeader: Partial<Header> = {},
+  extraHeader: Partial<JWTHeader> = {},
 ): string => {
-  const header: Header = {
+  const header: JWTHeader = {
     alg: "HS512T",
     typ: "JWT",
     ...extraHeader,

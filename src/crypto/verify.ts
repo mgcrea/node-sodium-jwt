@@ -1,11 +1,11 @@
 import sodium from "sodium-native";
-import type { Header, Payload } from "../types";
+import type { JWTHeader, JWTPayload } from "../types";
 import { asArray, asBuffer, createError } from "../utils";
 
 export const verifySync = (
   message: string,
   secretKeys: (string | Buffer) | (string | Buffer)[],
-): { header: Header; payload: Payload; rotated: boolean } => {
+): { header: JWTHeader; payload: JWTPayload; rotated: boolean } => {
   const splits = message.split(".");
   if (splits.length !== 3) {
     throw createError("MalformedMessageError", "The message is malformed");

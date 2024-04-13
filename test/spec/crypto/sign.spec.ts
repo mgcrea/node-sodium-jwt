@@ -1,8 +1,8 @@
 import { signSync } from "src/crypto";
-import type { Payload } from "src/types";
+import type { JWTPayload } from "src/types";
 import { describe, expect, it } from "vitest";
 
-const payload: Payload = {
+const payload: JWTPayload = {
   sub: 7,
   iat: new Date("2022-01-03T16:37:48.612Z").getTime(),
 };
